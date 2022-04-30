@@ -18,6 +18,10 @@ int saying::CountSymbols() {
 	}
 	return cnt;
 }
+void saying::OutAphorisms(ofstream& ofst)
+{
+	ofst << endl;
+}
 
 void aphorism::InData(ifstream& ifst) {
 	ifst >> text;
@@ -28,6 +32,10 @@ void aphorism::Out(ofstream& ofst) {
 	ofst << "Text: " << text << endl;
 	ofst << "It is an aphorism. Author: " << author << endl;
 	ofst << "Subjective assessment of the aphorism on a ten-point scale: " << rate << "/10 " << endl;
+}
+void aphorism::OutAphorisms(ofstream& ofst)
+{
+	Out(ofst);
 }
 
 void riddle::InData(ifstream& ifst) {
@@ -172,4 +180,19 @@ void container::Sort()
 		}
 		curr1 = curr1->next;
 	} while (curr1 != head);
+}
+void container::OutAphorisms(ofstream& ofst) {
+	int i = 1;
+	if (head == NULL)
+	{
+		return;
+	}
+	current = head;
+	do
+	{
+		ofst << i << ": ";
+		if (current->thought)current->thought->OutAphorisms(ofst);
+		current = current->next;
+		i++;
+	} while (current != head);
 }
