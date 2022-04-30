@@ -40,6 +40,15 @@ void riddle::Out(ofstream& ofst) {
 	ofst << "It is a riddle. Answer: " << answer << endl;
 	ofst << "Subjective assessment of the aphorism on a ten-point scale: " << rate << "/10 " << endl;
 }
+int riddle::CountSymbols() {
+	string symbols = ".,!?;";
+	int cnt = 0;
+	for (int i = 0; i < text.length(); i++)
+	{
+		if (symbols.find(text[i]) < symbols.length())cnt++;
+	}
+	return cnt;
+}
 int aphorism::CountSymbols() {
 	string symbols = ".,!?;";
 	int cnt = 0;
