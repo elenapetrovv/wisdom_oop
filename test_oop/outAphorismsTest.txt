@@ -1,0 +1,6 @@
+1: Text: testAphorism!!
+It is an aphorism. Author: testAuthor
+Subjective assessment of the riddle on a ten-point scale: 1/10 
+count of punctuation marks: 2
+2: 
+3: 
