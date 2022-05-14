@@ -66,3 +66,4 @@ public:
 	container(); // инициализация контейнера
 	~container() { Clear(); } // утилизация контейнера
 };
+bool fileCheck(ifstream& ifst, ofstream& ofst);

@@ -14,6 +14,10 @@ int main(int argc, char* argv[])
 	ifstream ifst(argv[1]); //ifstream ifst("in.txt");
 	ofstream ofst(argv[2]); //ofstream ofst("out.txt");
 	cout << "Start" << endl;
+	fileCheck(ifst, ofst);
+
+	ifst.close();
+	ifst.open(argv[1]);
 	container c;
 	c.In(ifst);
 	ofst << "Filled container. " << endl;
